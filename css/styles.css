@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+.bug {
+  color: #c5ee64;
+}
+
+.dragon {
+  color: #8864ee;
+}
+
+.electric {
+  color: #eed764;
+}
+
+.fighting {
+  color: #5e1908;
+}
+
+.fire {
+  color: #da500b;
+}
+
+.flying {
+  color: #abc1ed;
+}
+
+.ghost {
+  color: #3d2e6b;
+}
+
+.grass {
+  color: #86e854;
+}
+
+.ground {
+  color: #cdbd6a;
+}
+
+.ice {
+  color: #7ccfda;
+}
+
+.normal {
+  color: #d1cfc7;
+}
+
+.poison {
+  color: #7f5095;
+}
+
+.psychic {
+  color: #cd4c73;
+}
+
+.rock {
+  color: #a1903a;
+}
+
+.steel {
+  color: #acb5b9;
+}
+
+.water {
+  color: #3b88ce;
+}
+
+.fairy {
+  color: #f76eb8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: #f8fafc;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 1rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 80px;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.75;
+}
+
+.link-github {
+  vertical-align: baseline;
+  color: #333;
+  font-weight: 500;
+}
+
+.link-github::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #333;
+  margin: 0 auto;
+}
+
+.logo-container {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.logo-container svg * {
+  width: 100%;
+}
+
+.container {
+  padding: 0 10% 10vh 10%;
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pokedex {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 3rem;
+  margin-bottom: 60px;
+  transition: height 0.2s;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 0.8px 2.2px rgba(0, 0, 0, 0.011),
+    0 1.9px 5.3px rgba(0, 0, 0, 0.016), 0 3.6px 10px rgba(0, 0, 0, 0.02),
+    0 6.5px 17.9px rgba(0, 0, 0, 0.024), 0 12.1px 33.4px rgba(0, 0, 0, 0.029),
+    0 29px 80px rgba(0, 0, 0, 0.04);
+}
+
+.poke-sprite {
+  min-width: 10rem;
+  max-width: 14rem;
+  margin: 0 auto;
+}
+
+.poke-sprite img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.card:hover .poke-sprite {
+  animation: up-down 1.5s linear infinite both;
+}
+
+.poke-name {
+  font-size: 1.37rem;
+  font-weight: 500;
+}
+
+.types-list {
+  display: flex;
+  font-weight: 500;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.types-list li:first-child {
+  margin-right: 1rem;
+}
+
+.back-to-top {
+  background: #fff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-to-top img {
+  width: 30px;
+  height: 30px;
+  color: red;
+}
+
+.loader-container {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 3rem;
+}
+
+.loader::after {
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 90%;
+  margin: 0 auto;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.039);
+  border-radius: 50%;
+  position: relative;
+  bottom: 8px;
+}
+
+.loader img {
+  animation: pokeball-shake 1s linear infinite both;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@media (max-width: 480px) {
+  .pokedex {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@keyframes up-down {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes pokeball-shake {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: rotate(0deg);
+  }
+  16% {
+    /*transform: translate(1px, -1px);*/
+    transform: rotate(3deg);
+  }
+  33% {
+    -webkit-transform: scaleX(1);
+    transform: rotate(-6deg);
+  }
+  42% {
+    /*transform: translate(0px, 0px);*/
+  }
+  68% {
+    transform: rotate(7deg);
+  }
+  87% {
+    /*transform: translate(-1px, 1px);*/
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
